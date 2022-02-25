@@ -13,15 +13,66 @@
   <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 </head>
 <body>
+  <h1>DCODELAB</h1>
+
   <main>
     <section class="swiper-wrapper">
-      <article class="swiper-slide">slide1</article>
-      <article class="swiper-slide">slide2</article>
-      <article class="swiper-slide">slide3</article>
-      <article class="swiper-slide">slide4</article>
-      <article class="swiper-slide">slide5</article>
+      <article class="swiper-slide">
+        <div class="inner">
+          <div class="con">
+            <img src="img/pic1.png" alt="pic1">
+            <h2>Lorem ipsum dolor, sit.</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, sint.</p>
+          </div>
+        </div>
+      </article>
+      <article class="swiper-slide">
+        <div class="inner">
+          <div class="con">
+            <img src="img/pic2.png" alt="pic2">
+            <h2>Ullam, rem dignissimos neque.</h2>
+            <p>Laudantium repellendus in, velit quam magni consectetur eveniet hic, perspiciatis!</p>
+          </div>
+        </div>
+      </article>
+      <article class="swiper-slide">
+        <div class="inner">
+          <div class="con">
+            <img src="img/pic3.png" alt="pic3">
+            <h2>Ullam ipsum exercitationem, tempora.</h2>
+            <p>Eveniet temporibus dolores eligendi, dolor quia porro autem corporis distinctio!</p>
+          </div>
+        </div>
+      </article>
+      <article class="swiper-slide">
+        <div class="inner">
+          <div class="con">
+            <img src="img/pic4.png" alt="pic4">
+            <h2>Sit placeat rerum quos!</h2>
+            <p>Impedit facere officia optio voluptatibus enim magni distinctio deserunt et.</p>
+          </div>
+        </div>
+      </article>
+      <article class="swiper-slide">
+        <div class="inner">
+          <div class="con">
+            <img src="img/pic5.png" alt="pic5">
+            <h2>Inventore, repellat facere ut!</h2>
+            <p>Asperiores cum eos provident sit cupiditate, vitae reprehenderit hic. Placeat.</p>
+          </div>
+        </div>
+      </article>
     </section>
+
+    <nav class="swiper-pagination"></nav>
+
+    <nav class="swiper-button-prev navi"></nav>
+    <nav class="swiper-button-next navi"></nav>
   </main>
+
+  <footer>
+    2022 DCODELAB &copy; all rights reserved.
+  </footer>
 
   <script>
     //기본 스와이퍼 연결
@@ -30,9 +81,25 @@
       loop : true, //패널 순환(마지막 패널->첫번째 패널)
       direction : "horizontal", //스와이프 방향 "vertical"
       grabCursor : true, //커서 움켜쥐는 모양
-      slidesPerView : 2, //화면에 보이는 패널 수, 기본"auto"
-      spaceBetween : 20, //패널사이 간격 (px)
-      centeredSlides : true //활성화패널을 항상 가로 가운데배치
+      slidesPerView : "auto", //화면에 보이는 패널 수, 기본"auto"
+      spaceBetween : 30, //패널사이 간격 (px)
+      centeredSlides : true, //활성화패널을 항상 가로 가운데배치
+      pagination: {
+        el: ".swiper-pagination",
+        //clickable :true, //클릭이동
+        type : "fraction" //숫자형태
+      },
+      navigation : {
+        prevEl : ".swiper-button-prev",
+        nextEl : ".swiper-button-next"
+      },
+      effect : "coverflow", //기본
+      coverflowEffect : {
+        rotate : 50, //y축 회전각도
+        stretch : -100, //패널 사이 간격(당겨짐 정도)
+        depth : 400, //원근감(입체 왜곡 정도)
+        slideShadows : false //패널 그림자
+      }
     });
   </script>
 </body>
